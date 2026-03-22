@@ -18,4 +18,5 @@ router.put("/:id", authMiddleware, updateJob);
 
 // Delete job
 router.delete("/:id", authMiddleware, deleteJob);
+
 module.exports = router;

@@ -17,6 +17,13 @@ const jobSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  aiResult: {
+  score: Number,
+  matchingSkills: [String],
+  missingSkills: [String],
+  suggestions: [String],
+  analyzedAt: Date,
+}
 });
 
 module.exports = mongoose.model("Job", jobSchema);

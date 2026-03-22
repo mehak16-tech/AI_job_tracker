@@ -6,6 +6,8 @@ const cors = require("cors");
 
 const authRoutes = require("./routes/authRoutes");
 const jobRoutes = require("./routes/jobRoutes");
+const aiRoutes = require("./routes/aiRoutes");
+
 
 const app = express();
 
@@ -25,6 +27,9 @@ app.get("/protected", authMiddleware, (req, res) => {
     user: req.user
   });
 });
+
+//ai route
+app.use("/ai", aiRoutes);
 
 
 
