@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { API_BASE_URL } from '../utils/api';
-import { LogIn, User } from 'lucide-react';
+import { LogIn } from 'lucide-react';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
