@@ -7,6 +7,7 @@ const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 const aiRoutes = require("./routes/aiRoutes");
+const resumeRoutes = require("./routes/resumeRoutes");
 
 
 const app = express();
@@ -31,7 +32,8 @@ app.get("/protected", authMiddleware, (req, res) => {
 //ai route
 app.use("/ai", aiRoutes);
 
-
+// resume route
+app.use("/resume", resumeRoutes);
 
 app.use("/jobs", jobRoutes);
 // Test route

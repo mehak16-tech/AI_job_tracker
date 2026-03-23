@@ -211,9 +211,14 @@ exports.analyzeJob = async (req, res) => {
       return res.status(404).json({ message: "Job not found" });
     }
 
-    // 🔥 IMPORTANT: You need resume text
-    // For now we simulate (later we store resume in DB)
-    const resumeText = "React Node MongoDB JavaScript"; // TEMP
+    const Resume = require("../models/Resume");
+    const userResume = await Resume.findOne({ userId: req.user.userId });
+    
+    if (!userResume || !userResume.resumeText) {
+      return res.status(400).json({ message: "No resume found. Please upload a resume first." });
+    }
+
+    const resumeText = userResume.resumeText;
 
     let matchAnalysis;
     let scoringSource = "gemini";
