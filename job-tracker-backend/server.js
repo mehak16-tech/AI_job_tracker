@@ -14,6 +14,7 @@ const app = express();
 
 // Middleware
 const allowedOrigins = [
+  "https://ai-job-tracker-omega.vercel.app",
   "https://ai-job-tracker-shi3.onrender.com",
   process.env.FRONTEND_URL,
   "http://localhost:3000"
